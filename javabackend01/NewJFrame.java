@@ -76,7 +76,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        name.setText("HELLO");
+        String names = name.getText();
+        name.setText("HELLO " + names);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
