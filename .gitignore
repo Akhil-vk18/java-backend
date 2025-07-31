@@ -6,3 +6,4 @@
 /javabackend02/target/
 .vscode/
 !*md
+/ipfinder/target/
