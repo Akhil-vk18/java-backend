@@ -1,0 +1,9 @@
+**
+!.gitignore
+!*/
+!**/*.java
+/javabackend01/target/
+/javabackend02/target/
+.vscode/
+!*md
+/ipfinder/target/
