@@ -8,12 +8,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class Add extends HttpServlet{
-	public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException {
-		
-		int sum =(int)req.getAttribute("sum");//getting value from the first servlet using the key which we used for setting value
+	public void service(HttpServletRequest req,HttpServletResponse res) throws IOException {
+		//url rewiting,getting data from url
+		int n = Integer.parseInt(req.getParameter("sum"));
 		PrintWriter out = res.getWriter();
-		out.print("Running Second servlet \n");
-		out.print("sum is "+sum);
+		out.print("Running Second servlet \n sum value from the parameter :"+n);
+		
 		
 	}
 	
