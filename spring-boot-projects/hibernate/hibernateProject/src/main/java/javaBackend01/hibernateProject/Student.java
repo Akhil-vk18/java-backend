@@ -1,15 +1,22 @@
 package javaBackend01.hibernateProject;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity // Marks a Java class as database table
 //default table name will be class name
 // for naming table use @Table(name="student-table")
 @Table(name = "student_data")
+
+@Cacheable // mkaing student class available for second level caching
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Student {
 	@Id // Defines the primary key (essential for Hibernate to track rows)
 	private int id;

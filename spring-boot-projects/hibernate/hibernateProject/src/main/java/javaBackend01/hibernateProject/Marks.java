@@ -1,8 +1,8 @@
 package javaBackend01.hibernateProject;
 
-import jakarta.persistence.Embeddable;
 
-@Embeddable
+
+@javax.persistence.Embeddable
 public class Marks {
 private int  computer;
 private int maths;
