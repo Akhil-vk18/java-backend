@@ -25,14 +25,20 @@ public class App {
 		Session session = sf.openSession();
 		Transaction t = session.beginTransaction();
 
-		// fetching using hql 
-		String query ="from Employee";//here we need to pass the entity name
-	Query q=	session.createQuery(query);
-	List<Employee> list=q.list();
-	for (Employee employee : list) {
-		System.out.println(employee);
-	}
-		
+//		// fetching using hql 
+//		String query ="from Employee where name =:x";//here we need to pass the entity name
+//	Query q=	session.createQuery(query);
+//	q.setParameter("x", "akhil");//setting value to the x 
+	//or we can set like this 
+//	String userinput = "akhil";
+//	q.setParameter("x", userinput);
+//	List<Employee> list=q.list();
+//	for (Employee employee : list) {
+//		System.out.println(employee);
+//	}
+	Query query =	session.createQuery("delete from Employee where name = 'akhil'");
+int num =	query.executeUpdate();
+System.out.println("rows effected : "+ num);
 //		session.save(employee);
 		t.commit();
 		sf.close();
