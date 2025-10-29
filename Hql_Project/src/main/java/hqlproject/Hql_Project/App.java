@@ -36,14 +36,14 @@ public class App {
 //	for (Employee employee : list) {
 //		System.out.println(employee);
 //	}
-	Query query =	session.createQuery("delete from Employee where name = 'akhil'");
+	Query query =	session.createQuery("update Employee set dept ='ece' where id =3");//updating dept of id =3
 int num =	query.executeUpdate();
 System.out.println("rows effected : "+ num);
 //		session.save(employee);
 		t.commit();
 		sf.close();
 
-		System.out.println("data fetched");
+		System.out.println("data updated");
 
 	}
 }
